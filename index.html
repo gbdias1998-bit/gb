@@ -1,90 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Meu Portfólio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Portfolio</h1>
+        <h2>Meu Portfólio</h2>
         <nav>
-            <ul>
-                <li><a href="#sobremim">Sobre mim</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="contato.html">Contatos</a>
         </nav>
     </header>
-            </ul>
-        </nav>
-    </header>
+
     <main>
-    <div id="intro">
-        <div id="apresentacao">
-            <p>Olá, seja bem-vindo(a) ao meu portfólio!</p>
-            <p>Meu nome é <span>Pablo</span> e eu sou um desenvolvedor web</p>
-        </div>
+        <section class="intro-home">
+            <h1>Bem-vindo ao meu site!</h1>
+            <p>Conheça um pouco sobre meus interesses, projetos e conhecimentos na área de tecnologia.</p>
+        </section>
 
-        <div id="redes-sociais">
-            <a href="#">
-                <img src="./imagens/icons8-github-50.png" alt="">
-            </a>
+        <section class="cards-container">
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Desenvolvimento Web">
+                <div class="card-body">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Conheça meus estudos e projetos de desenvolvimento de páginas web.</p>
+                    <a href="contato.html">Saiba mais</a>
+                </div>
+            </article>
 
-            <a href="#">
-                <img src="./imagens/icons8-linkedin-50.png" alt="">
-            </a>
-        </div>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Tecnologia">
+                <div class="card-body">
+                    <h3>Tecnologia</h3>
+                    <p>Explore conteúdos sobre computadores, inovação e novas tecnologias.</p>
+                    <a href="contato.html">Saiba mais</a>
+                </div>
+            </article>
 
-        <a href="#sobreMim">
-            <button>Conheça mais sobre mim</button>
-        </a>
-    </div>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Aprendizagem">
+                <div class="card-body">
+                    <h3>Aprendizagem</h3>
+                    <p>Descubra recursos e conteúdos para aprender e desenvolver habilidades.</p>
+                    <a href="contato.html">Saiba mais</a>
+                </div>
+            </article>
+        </section>
+    </main>
 
-    <div id="img-dev">
-        <img src="./imagens/graphy-software-developer-coding-with-two-monitors.png" alt="">
-    </div>
-</main>
-</body>
-</html>
-<section id="sobreMim">
-    <div id="resumo">
-        <h2>Sobre mim</h2>
-        <p>
-            Meu nome é Fulano e eu estudo desenvolvimento web desde janeiro de 2024. Comecei estudando HTML/CSS e hoje tenho conhecimento de diversas tecnologias.<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis ipsa eum repudiandae dicta placeat numquam sapiente iure iste saepe est ducimus architecto error omnis voluptas odit officiis, nesciunt veniam.
-        </p>
-    </div>
+    <footer>
+        <p>&copy; 2026 - Meu Portfólio. Todos os direitos reservados.</p>
+        <p>Desenvolvido com HTML5 e CSS3.</p>
+        <p><a href="contato.html">Entre em contato</a></p>
+    </footer>
 
-    <div id="meusConhecimentos">
-        <h2>Meus conhecimentos</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Javascript</li>
-        </ul>
-    </div>
-</section>
-<section id="contato">
-    <h2>Você pode me enviar uma mensagem!</h2>
-    <p>
-        Preencha o seu nome, seu e-mail e escreva a mensagem que deseja enviar para mim. Logo quando eu puder, irei de responder.<br><br>
-        Desde já, agradeço o seu contato!
-    </p>
-
-    <form>
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
-
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea><br><br>
-
-        <input id="btnEnviar" type="submit" value="Enviar">
-    </form>
-</section>
-<script src="script.js"></script>
 </body>
 </html>

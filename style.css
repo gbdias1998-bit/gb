@@ -1,217 +1,279 @@
-*{                  
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        list-style: none;
-        text-decoration: none;
-        font-family: 'Segoe UI', tahoma, Geneva, Verdana, sans-serif;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20 px;
-    text-transform: uppercase;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.21);
-    background-color: #fff;
-}
-
-
-nav a {
-    color: black;
-    padding: 20px 20px;
-}
-
-nav ul {
-    display: flex;
-}
-
-nav ul a:hover {
-    background-color: rgb(187, 0, 255);
-    color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-image: url("./imagens/v748-toon-103.jpg");
-    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #eef6f4;
+    color: #333333;
 }
 
-/* INÍCIO MAIN */
+/* Cabeçalho e Menu */
+header {
+    background-color: #14342f;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 60px;
+}
 
+header h2 {
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Área Principal */
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
-}
-
-#intro {
-    max-width: 550px;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    padding: 40px 20px 60px;
+    width: 100%;
 }
 
-#apresentacao p:nth-child(1) {
-    font-size: 30px;
+.intro-home {
+    text-align: center;
+    margin-bottom: 35px;
 }
 
-#apresentacao p:nth-child(2) {
-    font-size: 40px;
+.intro-home h1 {
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.intro-home p {
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+/* Cards (Home) */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1150px;
+    width: 100%;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 24px 20px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.card-body h3 {
+    font-size: 1.05rem;
+    color: #222222;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.card-body p {
+    font-size: 0.85rem;
+    color: #666666;
+    line-height: 1.45;
+    margin-bottom: 22px;
+    flex: 1;
+}
+
+.card-body a {
+    display: inline-block;
+    background-color: #0c8574;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 10px 24px;
+    border-radius: 6px;
     font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-#redes-sociais {
-    display: flex;
-    gap: 20px;
+.card-body a:hover {
+    background-color: #08665a;
+    transform: scale(1.03);
 }
 
-#redes-sociais img {
-    width: 45px;
-}
-
-#apresentacao p:nth-child(2) span {
-    color: rgb(187, 0, 255);
-}
-
-#intro button {
-    padding: 14px 30px;
-    font-size: 20px;
+/* Formulário de Contato */
+.form-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 580px;
+    padding: 40px;
     border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+.form-card h2 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.form-card > p {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid #d3e0dc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #333333;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0a4ab;
+    font-size: 0.85rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0c8574;
+}
+
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: #14342f;
+    color: #ffffff;
     border: none;
-    background-color: black;
-    color: white;
+    padding: 11px 22px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
-#intro button:hover {
-    color: rgb(187, 0, 255);
-}
-/* INÍCIO SOBRE MIM */
-
-#sobreMim {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    height: 100vh;
-    border-top: 2px solid rgb(0, 0, 0);
+.btn-submit:hover {
+    background-color: #1f4d45;
 }
 
-#resumo {
-    margin-top: 10%;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Rodapé */
+footer {
+    background-color: #14342f;
+    color: #a9c7c0;
+    text-align: center;
+    padding: 22px 20px;
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
-#meusConhecimentos {
-    margin-top: 10%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+footer p {
+    margin: 2px 0;
 }
 
-#resumo h2, #meusConhecimentos h2 {
-    font-size: 50px;
-    color: rgb(187, 0, 255);
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
 }
 
-#resumo p, #meusConhecimentos ul li {
-    font-size: 26px;
-    font-weight: 600;
-}
-/* INÍCIO CONTATO */
-
-#contato {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    height: 100vh;
-    border-top: 2px solid black;
-    text-align: align;
+footer a:hover {
+    opacity: 0.8;
 }
 
-#contato h2 {
-    margin-top: 5%;
-    font-size: 50px;
-    color: rgb(187, 0, 255);
-}
-
-#contato p {
-    font-size: 26px;
-    font-weight: 600;
-}
-
-#contato form {
-    text-align: left;
-    font-weight: 600;
-}
-
-#contato form input, textarea {
-    height: 40px;
-    width: 400px;
-    max-width: 400px;
-    padding-inline: 5px;
-}
-
-@media screen and (max-width: 950px) {
+/* Responsividade (telas menores) */
+@media (max-width: 768px) {
     header {
         flex-direction: column;
+        gap: 14px;
+        padding: 20px;
+        text-align: center;
     }
 
-    /* INÍCIO MAIN */
-
-    #intro {
-        padding-inline: 20px;
+    nav {
+        gap: 20px;
     }
 
-    #apresentacao p:nth-child(1) {
-        font-size: 27px;
-    }
-
-    #apresentacao p:nth-child(2) {
-        font-size: 37px;
-    }
-
-    #img-dev {
-        display: none;
-    }
-
-    /* INÍCIO SOBRE MIM */
-
-    #sobreMim {
+    .cards-container {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
     }
 
-    #resumo, #meusConhecimentos {
-        margin-top: 0;
-        padding-inline: 20px;
+    .card {
+        width: 100%;
+        max-width: 360px;
     }
 
-    #resumo h2, #meusConhecimentos h2 {
-        font-size: 40px;
-    }
-
-    #resumo p, #meusConhecimentos ul li {
-        font-size: 15px;
-    }
-
-    /* INÍCIO CONTATO */
-
-    #contato {
-        padding-inline: 20px;
-    }
-
-    #contato h2 {
-        font-size: 40px;
-    }
-
-    #contato form input, textarea {
-        width: 300px;
+    .form-card {
+        padding: 25px 20px;
     }
 }

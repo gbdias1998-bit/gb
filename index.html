@@ -1,62 +1,295 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexo Tech | Loja de tecnologia e automação industrial</title>
+  <meta name="description" content="Eletrônicos, ferramentas e automação para a indústria.">
+
+  <!-- Fontes: Sora (títulos) e DM Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="app">
 
-    <header>
-        <h2>Meu Portfólio</h2>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="contato.html">Contatos</a>
+    <!-- ============ MENU LATERAL (fixo à esquerda) ============ -->
+    <aside class="lateral">
+      <a class="lateral__logo" href="index.html" aria-label="Nexo Tech - página inicial">
+        <img src="assets/img/logo.svg" alt="Nexo Tech" width="170" height="37">
+      </a>
+
+      <nav aria-label="Categorias de produtos">
+        <h2 class="lateral__titulo">Explorar</h2>
+        <ul class="lateral__lista">
+          <li><a href="#vitrine" class="ativo">Destaques</a><span>8</span></li>
+          <li><a href="#vitrine">Ofertas</a><span>3</span></li>
+          <li><a href="#vitrine">Eletrônicos</a><span>2</span></li>
+          <li><a href="#vitrine">Ferramentas</a><span>3</span></li>
+          <li><a href="#vitrine">Automação</a><span>3</span></li>
+        </ul>
+      </nav>
+
+      <div class="lateral__aviso">
+        <p><strong>Frete grátis</strong> em compras acima de R$ 1.500 para todo o Brasil.</p>
+      </div>
+    </aside>
+
+    <div class="conteudo">
+
+      <!-- ============ CABEÇALHO ============ -->
+      <header class="topo">
+        <form class="topo__busca" role="search" onsubmit="return false">
+          <label class="sr-only" for="busca">Buscar produtos</label>
+          <input id="busca" type="search" placeholder="O que você precisa hoje?">
+          <button type="submit" class="btn btn--busca">Buscar</button>
+        </form>
+        <nav class="topo__acoes" aria-label="Conta e carrinho">
+          <a href="#">Minha conta</a>
+          <a href="#" class="topo__carrinho">Carrinho <span class="topo__contador">0</span></a>
         </nav>
-    </header>
+      </header>
 
-    <main>
-        <section class="intro-home">
-            <h1>Bem-vindo ao meu site!</h1>
-            <p>Conheça um pouco sobre meus interesses, projetos e conhecimentos na área de tecnologia.</p>
+      <!-- ============ ÁREA PRINCIPAL ============ -->
+      <main class="principal" id="vitrine">
+
+        <!-- Banner de apresentação -->
+        <section class="destaque" aria-labelledby="titulo-vitrine">
+          <h1 id="titulo-vitrine">Tecnologia para a bancada e para o chão de fábrica</h1>
+          <p>Instrumentos de medição, ferramentas e componentes de automação com garantia e nota fiscal.</p>
         </section>
 
-        <section class="cards-container">
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Desenvolvimento Web">
-                <div class="card-body">
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Conheça meus estudos e projetos de desenvolvimento de páginas web.</p>
-                    <a href="contato.html">Saiba mais</a>
-                </div>
-            </article>
+        <section class="vitrine" aria-labelledby="titulo-produtos">
+          <h2 id="titulo-produtos" class="vitrine__titulo">Produtos</h2>
 
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Tecnologia">
-                <div class="card-body">
-                    <h3>Tecnologia</h3>
-                    <p>Explore conteúdos sobre computadores, inovação e novas tecnologias.</p>
-                    <a href="contato.html">Saiba mais</a>
-                </div>
-            </article>
+          <!-- Filtros rápidos (CSS puro: radios + labels) -->
+          <input class="filtro-radio" type="radio" name="filtro" id="f-todos" checked>
+          <input class="filtro-radio" type="radio" name="filtro" id="f-ofertas">
+          <input class="filtro-radio" type="radio" name="filtro" id="f-eletronicos">
+          <input class="filtro-radio" type="radio" name="filtro" id="f-ferramentas">
+          <input class="filtro-radio" type="radio" name="filtro" id="f-automacao">
 
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Aprendizagem">
-                <div class="card-body">
-                    <h3>Aprendizagem</h3>
-                    <p>Descubra recursos e conteúdos para aprender e desenvolver habilidades.</p>
-                    <a href="contato.html">Saiba mais</a>
-                </div>
-            </article>
+          <div class="filtros" role="group" aria-label="Filtros rápidos">
+            <label for="f-todos">Todos</label>
+            <label for="f-ofertas">Ofertas</label>
+            <label for="f-eletronicos">Eletrônicos</label>
+            <label for="f-ferramentas">Ferramentas</label>
+            <label for="f-automacao">Automação</label>
+          </div>
+
+          <!-- Grade de produtos -->
+          <div class="grade">
+
+        <!-- Card: Estação de Solda Digital 60 W -->
+        <article class="card" data-categoria="eletronicos">
+          <img class="card__img" src="assets/img/solda.svg" alt="Estação de Solda Digital 60 W" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Eletrônicos</p>
+            <h3 class="card__titulo">Estação de Solda Digital 60 W</h3>
+            <p class="card__desc">Controle de temperatura com display, ideal para bancada de eletrônica.</p>
+            <ul class="card__specs">
+            <li>150 a 450 °C</li>
+            <li>Display LED</li>
+            <li>Ponta cerâmica</li>
+            </ul>
+            <div class="card__preco">
+              <strong>R$ 429,90</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 8x de R$ 53,74</span>
+            </div>
+            <button class="btn" type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Card: Osciloscópio Digital 100 MHz -->
+        <article class="card oferta" data-categoria="eletronicos">
+          <span class="card__selo">Oferta</span>
+          <img class="card__img" src="assets/img/osciloscopio.svg" alt="Osciloscópio Digital 100 MHz" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Eletrônicos</p>
+            <h3 class="card__titulo">Osciloscópio Digital 100 MHz</h3>
+            <p class="card__desc">Dois canais com tela colorida de 7 polegadas para análise de sinais.</p>
+            <ul class="card__specs">
+            <li>2 canais</li>
+            <li>1 GS/s</li>
+            <li>USB e LAN</li>
+            </ul>
+            <div class="card__preco">
+              <s class="card__antigo">R$ 3.399,00</s>
+            <strong>R$ 2.890,00</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 10x de R$ 289,00</span>
+            </div>
+            <button class="btn" type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Card: Impressora 3D FDM Industrial -->
+        <article class="card" data-categoria="ferramentas">
+          <img class="card__img" src="assets/img/impressora3d.svg" alt="Impressora 3D FDM Industrial" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Ferramentas</p>
+            <h3 class="card__titulo">Impressora 3D FDM Industrial</h3>
+            <p class="card__desc">Mesa aquecida e estrutura em aço para protótipos e peças funcionais.</p>
+            <ul class="card__specs">
+            <li>Área 300 mm</li>
+            <li>PLA, ABS, PETG</li>
+            <li>Nivelamento auto</li>
+            </ul>
+            <div class="card__preco">
+              <strong>R$ 3.790,00</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 12x de R$ 315,83</span>
+            </div>
+            <button class="btn" type="button">Ver detalhes</button>
+          </div>
+        </article>
+
+        <!-- Card: Inversor de Frequência 2 cv -->
+        <article class="card oferta" data-categoria="automacao">
+          <span class="card__selo">Oferta</span>
+          <img class="card__img" src="assets/img/inversor.svg" alt="Inversor de Frequência 2 cv" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Automação</p>
+            <h3 class="card__titulo">Inversor de Frequência 2 cv</h3>
+            <p class="card__desc">Controle vetorial para motores trifásicos, com IHM destacável.</p>
+            <ul class="card__specs">
+            <li>220 V trifásico</li>
+            <li>1,5 kW</li>
+            <li>Modbus RTU</li>
+            </ul>
+            <div class="card__preco">
+              <s class="card__antigo">R$ 1.480,00</s>
+            <strong>R$ 1.259,00</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 10x de R$ 125,90</span>
+            </div>
+            <button class="btn" type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Card: Câmera IP Industrial PoE -->
+        <article class="card" data-categoria="automacao">
+          <img class="card__img" src="assets/img/camera.svg" alt="Câmera IP Industrial PoE" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Automação</p>
+            <h3 class="card__titulo">Câmera IP Industrial PoE</h3>
+            <p class="card__desc">Monitoramento de linha de produção com visão noturna e alimentação PoE.</p>
+            <ul class="card__specs">
+            <li>Full HD 1080p</li>
+            <li>IP67</li>
+            <li>Visão noturna 30 m</li>
+            </ul>
+            <div class="card__preco">
+              <strong>R$ 649,00</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 6x de R$ 108,17</span>
+            </div>
+            <button class="btn" type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Card: IHM Touch 7 polegadas -->
+        <article class="card" data-categoria="automacao">
+          <img class="card__img" src="assets/img/ihm.svg" alt="IHM Touch 7 polegadas" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Automação</p>
+            <h3 class="card__titulo">IHM Touch 7 polegadas</h3>
+            <p class="card__desc">Interface homem-máquina para painéis, compatível com os principais CLPs.</p>
+            <ul class="card__specs">
+            <li>800 x 480 px</li>
+            <li>RS-485 e Ethernet</li>
+            <li>24 Vcc</li>
+            </ul>
+            <div class="card__preco">
+              <strong>R$ 1.890,00</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 10x de R$ 189,00</span>
+            </div>
+            <button class="btn" type="button">Ver detalhes</button>
+          </div>
+        </article>
+
+        <!-- Card: Parafusadeira a Bateria 18 V -->
+        <article class="card oferta" data-categoria="ferramentas">
+          <span class="card__selo">Oferta</span>
+          <img class="card__img" src="assets/img/parafusadeira.svg" alt="Parafusadeira a Bateria 18 V" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Ferramentas</p>
+            <h3 class="card__titulo">Parafusadeira a Bateria 18 V</h3>
+            <p class="card__desc">Compacta e leve, com 2 baterias de lítio e carregador bivolt.</p>
+            <ul class="card__specs">
+            <li>Torque 40 N·m</li>
+            <li>2 velocidades</li>
+            <li>LED frontal</li>
+            </ul>
+            <div class="card__preco">
+              <s class="card__antigo">R$ 449,00</s>
+            <strong>R$ 379,00</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 5x de R$ 75,80</span>
+            </div>
+            <button class="btn" type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Card: Paquímetro Digital 150 mm -->
+        <article class="card" data-categoria="ferramentas">
+          <img class="card__img" src="assets/img/paquimetro.svg" alt="Paquímetro Digital 150 mm" width="400" height="300" loading="lazy">
+          <div class="card__corpo">
+            <p class="card__categoria">Ferramentas</p>
+            <h3 class="card__titulo">Paquímetro Digital 150 mm</h3>
+            <p class="card__desc">Aço inoxidável com leitura em mm e polegadas e resolução de 0,01 mm.</p>
+            <ul class="card__specs">
+            <li>0 a 150 mm</li>
+            <li>Aço inox</li>
+            <li>Estojo incluso</li>
+            </ul>
+            <div class="card__preco">
+              <strong>R$ 139,90</strong>
+              <span class="card__avista">à vista no Pix</span>
+              <span class="card__parcela">em até 3x de R$ 46,63</span>
+            </div>
+            <button class="btn" type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+          </div>
         </section>
-    </main>
+      </main>
 
-    <footer>
-        <p>&copy; 2026 - Meu Portfólio. Todos os direitos reservados.</p>
-        <p>Desenvolvido com HTML5 e CSS3.</p>
-        <p><a href="contato.html">Entre em contato</a></p>
-    </footer>
-
+      <!-- ============ RODAPÉ ============ -->
+      <footer class="rodape">
+        <div class="rodape__colunas">
+          <section>
+            <h2>Nexo Tech</h2>
+            <p>Loja virtual de tecnologia e soluções industriais. Protótipo criado para fins didáticos.</p>
+            <p>CNPJ 00.000.000/0001-00 · Rio de Janeiro, RJ</p>
+          </section>
+          <nav aria-label="Suporte">
+            <h2>Suporte</h2>
+            <ul>
+              <li><a href="#">Central de ajuda</a></li>
+              <li><a href="#">Trocas e devoluções</a></li>
+              <li><a href="#">Garantia</a></li>
+              <li><a href="#">Contato</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Redes sociais">
+            <h2>Siga a gente</h2>
+            <ul class="rodape__redes">
+              <li><a href="#" aria-label="Instagram">IG</a></li>
+              <li><a href="#" aria-label="LinkedIn">in</a></li>
+              <li><a href="#" aria-label="YouTube">YT</a></li>
+              <li><a href="#" aria-label="WhatsApp">WA</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="rodape__direitos">&copy; 2026 Nexo Tech. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>

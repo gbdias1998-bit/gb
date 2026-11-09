@@ -1,0 +1,9 @@
+Nexo Tech - Home de e-commerce (modelo 2, HTML5 + CSS3 sem frameworks)
+
+Abrir: duplo clique em index.html (fontes do Google precisam de internet).
+
+  index.html   -> estrutura semântica
+  style.css    -> toda a estilização
+  assets/img/  -> logotipo e imagens dos produtos (SVG)
+
+Os filtros rápidos funcionam apenas com CSS (inputs radio + labels).
